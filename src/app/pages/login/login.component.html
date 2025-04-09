@@ -1,0 +1,306 @@
+<section class="bg-white dark:bg-darkblack-500">
+  <div class="flex min-h-screen flex-col justify-between lg:flex-row">
+    <!-- Left -->
+    <div class="px-5 pt-10 lg:w-1/2 xl:pl-12">
+      <header>
+        <a href="https://www.construa10.com.br" class="" target="_blank">
+          <img src="assets/images/logo/logoaccess.png" class="block dark:hidden" alt="Logo" />
+        </a>
+      </header>
+      <div class="m-auto max-w-[450px] pb-16 pt-24">
+        <header class="mb-8 text-center">
+          <h2 class="mb-2 font-poppins text-4xl font-semibold text-blueDarkLogo dark:text-white">
+            Faça seu login.
+          </h2>
+          <p class="font-poppins font-mono text-sm text-bgray-600 dark:text-bgray-50">
+            
+          </p>
+        </header>
+        <div class="relative mb-5 mt-6">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-300 dark:border-darkblack-400"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="bg-white px-2 text-base text-gray-600 dark:bg-darkblack-500">acesse</span>
+          </div>
+        </div>
+        <form action="">
+          <div class="mb-4">
+            <input type="text"
+              class="h-14 w-full rounded-lg border border-gray-300 px-4 py-3.5 text-base text-gray-800 placeholder:text-base placeholder:text-bgray-500 focus:border-blueDarkLogo focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-500 dark:text-white"
+              placeholder="Email" />
+          </div>
+          <div class="relative mb-6">
+            <input [type]="showPassword ? 'text' : 'password'"
+              class="h-14 w-full rounded-lg border border-gray-300 px-4 py-3.5 text-base text-bgray-800 placeholder:text-base placeholder:text-bgray-500 focus:border-blueDarkLogo focus:ring-0 dark:border-darkblack-400 dark:bg-darkblack-500 dark:text-white"
+              placeholder="Senha" />
+            <button type="button" (click)="togglePassword()" class="absolute bottom-4 right-4 top-4">
+              <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 1L20 19" stroke="#718096" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M9.58445 8.58704C9.20917 8.96205 8.99823 9.47079 8.99805 10.0013C8.99786 10.5319 9.20844 11.0408 9.58345 11.416C9.95847 11.7913 10.4672 12.0023 10.9977 12.0024C11.5283 12.0026 12.0372 11.7921 12.4125 11.417"
+                  stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M8.363 3.36506C9.22042 3.11978 10.1082 2.9969 11 3.00006C15 3.00006 18.333 5.33306 21 10.0001C20.222 11.3611 19.388 12.5241 18.497 13.4881M16.357 15.3491C14.726 16.4491 12.942 17.0001 11 17.0001C7 17.0001 3.667 14.6671 1 10.0001C2.369 7.60506 3.913 5.82506 5.632 4.65906"
+                  stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="mb-7 flex justify-between">
+            <div class="flex items-center space-x-3">
+              <input type="checkbox"
+                class="h-5 w-5 rounded-full border border-gray-300 text-primary focus:primary focus:ring-transparent" name="remember" id="remember" />
+                <label for="remember" class="text-base font-semibold text-blueDarkLogo dark:text-white">lembre-me</label>
+            </div>
+            <div>
+              <button type="button" class="modal-open text-base font-semibold text-blueDarkLogo underline hover:text-primary"
+                (click)="setStatusOpen(true)">
+                Esqueceu a Senha?
+              </button>
+            </div>
+          </div>
+          <a href="/"
+            class="flex w-full items-center justify-center rounded-lg bg-buttons py-3.5 font-bold text-white hover:bg-buttonsHover">
+            Acessar
+          </a>
+        </form>
+        <p class="pt-7 text-center text-base font-medium text-blueDarkLogo">
+          Ainda não tem uma conta ?
+          <a href="signup.html" class="font-semibold underline hover:text-primary">Cadastre-se aqui</a>
+        </p>
+        <nav class="flex flex-wrap items-center justify-center gap-x-11 pt-14">
+          <a href="#" class="text-sm text-blueDarkLogo dark:text-white hover:text-primary">Termos & Condições</a>
+          <a href="#" class="text-sm text-blueDarkLogo dark:text-white hover:text-primary">Politica de Privacidade</a>
+        </nav>
+        <p class="mt-6 text-center text-sm text-blueDarkLogo dark:text-white">
+          &#169; 2025 Todos os direitos reservados <br> desenvolvido por <a class="hover:text-primary font-poppins" href="https://aluriax.com.br">aluriax software</a>
+        </p>
+      </div>
+    </div>
+    <!-- Right -->
+    <div class="lg:w-1/2 lg:block hidden bg-[#F6FAFF] dark:bg-darkblack-600 p-20 relative">
+      <div class="">
+        <img
+          src="assets/images/background/heroAccess.png
+        "
+          alt=""
+        />
+      </div>
+      <div>
+        <div class="text-center max-w-lg px-1.5 m-auto">
+          <h3
+            class="text-bgray-900 dark:text-white font-semibold font-popins text-4xl mb-4"
+          >
+            "A sua obra começa aqui !"
+          </h3>
+          <p class="text-bgray-600 dark:text-bgray-50 text-sm font-medium">
+            Estamos aqui para transformar a forma como sua empresa administra suas obras, proporcionando ferramentas e processos que aumentam a eficiência e melhoram a organização em cada etapa do projeto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div *ngIf="isOpen" class="modal fixed inset-0 z-50 flex items-center justify-center overflow-y-auto">
+  <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75 dark:bg-bgray-900 dark:opacity-50"></div>
+  <div class="modal-content mx-auto w-full max-w-lg px-4">
+    <div *ngIf="stepForm === 1" class="step-content step-1">
+      <!-- My Content -->
+      <div
+        class="relative max-w-[492px] transform overflow-hidden rounded-lg bg-white p-8 text-left transition-all dark:bg-darkblack-600">
+        <div class="absolute right-0 top-0 pr-5 pt-5">
+          <button type="button" class="rounded-md bg-white focus:outline-none dark:bg-darkblack-500"
+            (click)="resetSteps()">
+            <span class="sr-only">Fechar</span>
+            <!-- Cross Icon -->
+            <svg class="stroke-darkblack-300" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6L18 18M6 18L18 6L6 18Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <a href="signin.html" class="mb-7 block" aria-label="Go to Sign In page">
+            <img src="assets/images/logo/logoaccess.png" class="block dark:hidden" alt="" />            
+          </a>
+          <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">
+            Reset de senha
+          </h3>
+          <p class="mb-7 text-base font-medium text-bgray-600 dark:text-darkblack-300">
+            Digite o endereço e-mail cadatradoa à sua conta, e receba um link para redefinir sua senha.
+          </p>
+          <form action="">
+            <div class="mb-8">
+              <input type="text"
+                class="h-14 w-full rounded-lg border-0 bg-[#F5F5F5] p-4 text-base placeholder:font-medium focus:border focus:border-blueDarkLogo focus:ring-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="Email" />
+            </div>
+            <a href="/access" class="mb-8 block text-sm font-bold text-success-300 underline">retornar ao login</a>
+            <button type="button" (click)="setStepForm(2)"
+              class="flex w-full justify-center rounded-lg bg-buttons py-4 text-base font-medium text-white transition-all hover:bg-buttonsHover">
+              Continue
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Step 2 -->
+    <div *ngIf="stepForm === 2" class="step-content step-2">
+      <div
+        class="relative max-w-lg transform overflow-hidden rounded-lg bg-white p-8 text-left transition-all dark:bg-darkblack-600">
+        <div class="absolute right-0 top-0 pr-5 pt-5">
+          <button type="button" class="rounded-md bg-white focus:outline-none dark:bg-darkblack-500"
+            (click)="resetSteps()">
+            <span class="sr-only">Fechar</span>
+            <!-- Cross Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6L18 18M6 18L18 6L6 18Z" stroke="#747681" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <a href="signin.html" class="mb-7 block" title="Login">
+            <img src="assets/images/logo/logo-color.svg" class="block dark:hidden" alt="" />
+            <img src="assets/images/logo/logo-white.svg" class="hidden dark:block" alt="" />
+          </a>
+          <h3 class="mb-3 text-2xl font-bold text-bgray-900 dark:text-white">
+            Insira o código de verificação
+          </h3>
+          <p class="mb-7 text-base font-medium text-bgray-600 dark:text-darkblack-300">
+            Acabamos de enviar um código para test*****mail.com
+          </p>
+          <form>
+            <div class="mb-8 flex space-x-6">
+              <input type="text"
+                class="h-14 w-14 rounded-xl border border-transparent bg-[#F5F5F5] px-5 py-3 text-2xl font-bold text-bgray-900 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="" />
+              <input type="text"
+                class="h-14 w-14 rounded-xl border border-transparent bg-[#F5F5F5] px-5 py-3 text-2xl font-bold text-bgray-900 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="" />
+              <input type="text"
+                class="h-14 w-14 rounded-xl border border-transparent bg-[#F5F5F5] px-5 py-3 text-2xl font-bold text-bgray-900 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="" />
+              <input type="text"
+                class="h-14 w-14 rounded-xl border border-transparent bg-[#F5F5F5] px-5 py-3 text-2xl font-bold text-bgray-900 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="" />
+              <input type="text"
+                class="h-14 w-14 rounded-xl border border-transparent bg-[#F5F5F5] px-5 py-3 text-2xl font-bold text-bgray-900 focus:border focus:border-success-300 focus:ring-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="" />
+            </div>
+            <button class="mb-8 block text-sm font-bold text-success-300">
+              Envie o código novamente
+            </button>
+            <button type="button" (click)="setStepForm(3)"
+              class="flex w-full justify-center rounded-lg bg-success-300 py-4 text-base font-medium text-white transition-all">
+              Verificar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Step 3 -->
+    <div *ngIf="stepForm === 3" class="step-content step-3">
+      <!-- Step 3 Content Here -->
+      <div
+        class="relative transform overflow-hidden rounded-lg bg-white p-8 text-left transition-all dark:bg-darkblack-600">
+        <div class="absolute right-0 top-0 pr-5 pt-5">
+          <button type="button" (click)="resetSteps()"
+            class="rounded-md bg-white focus:outline-none dark:bg-darkblack-500">
+            <span class="sr-only">Fechar</span>
+            <!-- Cross Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6L18 18M6 18L18 6L6 18Z" stroke="#747681" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <a href="signin.html" class="mb-7 block" aria-label="Sign In">
+            <img src="assets/images/logo/logo-color.svg" class="block dark:hidden" alt="" />
+            <img src="assets/images/logo/logo-white.svg" class="hidden dark:block" alt="" />
+          </a>
+          <h3 class="mb-3 text-2xl font-bold text-bgray-900 dark:text-white">
+            Criar nova senha
+          </h3>
+          <p class="mb-7 text-base font-medium text-bgray-600 dark:text-darkblack-300">
+            Por favor insira uma nova senha. Sua nova senha deve ser diferente
+            da senha anterior.
+          </p>
+          <form action="">
+            <div class="relative mb-6">
+              <input type="text"
+                class="h-14 w-full rounded-lg border border-bgray-300 px-4 py-3.5 text-base text-bgray-800 placeholder:text-base placeholder:text-bgray-500 focus:border focus:border-success-300 focus:ring-0 dark:border-0 dark:bg-darkblack-500 dark:text-white"
+                placeholder="Senha" />
+              <button class="absolute bottom-4 right-4 top-4">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 1L20 19" stroke="#718096" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M9.58445 8.58704C9.20917 8.96205 8.99823 9.47079 8.99805 10.0013C8.99786 10.5319 9.20844 11.0408 9.58345 11.416C9.95847 11.7913 10.4672 12.0023 10.9977 12.0024C11.5283 12.0026 12.0372 11.7921 12.4125 11.417"
+                    stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M8.363 3.36506C9.22042 3.11978 10.1082 2.9969 11 3.00006C15 3.00006 18.333 5.33306 21 10.0001C20.222 11.3611 19.388 12.5241 18.497 13.4881M16.357 15.3491C14.726 16.4491 12.942 17.0001 11 17.0001C7 17.0001 3.667 14.6671 1 10.0001C2.369 7.60506 3.913 5.82506 5.632 4.65906"
+                    stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="relative mb-8">
+              <input type="text"
+                class="h-14 w-full rounded-lg border border-bgray-300 px-4 py-3.5 text-base text-bgray-800 placeholder:text-base placeholder:text-bgray-500 focus:border-success-300 focus:ring-0 dark:border-0 dark:bg-darkblack-500"
+                placeholder="Confirme sua senha" />
+              <button class="absolute bottom-4 right-4 top-4">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 1L20 19" stroke="#718096" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M9.58445 8.58704C9.20917 8.96205 8.99823 9.47079 8.99805 10.0013C8.99786 10.5319 9.20844 11.0408 9.58345 11.416C9.95847 11.7913 10.4672 12.0023 10.9977 12.0024C11.5283 12.0026 12.0372 11.7921 12.4125 11.417"
+                    stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M8.363 3.36506C9.22042 3.11978 10.1082 2.9969 11 3.00006C15 3.00006 18.333 5.33306 21 10.0001C20.222 11.3611 19.388 12.5241 18.497 13.4881M16.357 15.3491C14.726 16.4491 12.942 17.0001 11 17.0001C7 17.0001 3.667 14.6671 1 10.0001C2.369 7.60506 3.913 5.82506 5.632 4.65906"
+                    stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <button type="button" (click)="setStepForm(4)"
+              class="flex w-full justify-center rounded-lg bg-success-300 py-4 text-base font-medium text-white transition-all hover:bg-success-400">
+              Confirmar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Step 4 -->
+    <div *ngIf="stepForm === 4" class="step-content step-4">
+      <div
+        class="relative transform overflow-hidden rounded-lg bg-white p-8 text-left transition-all dark:bg-darkblack-600">
+        <div class="absolute right-0 top-0 pr-5 pt-5">
+          <button type="button" (click)="resetSteps()"
+            class="rounded-md bg-white focus:outline-none dark:bg-darkblack-500">
+            <span class="sr-only">Fechar</span>
+            <!-- Cross Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6L18 18M6 18L18 6L6 18Z" stroke="#747681" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4 text-center">
+          <h3 class="mb-3 text-2xl font-bold text-bgray-900 dark:text-white">
+            Você alterou sua senha com sucesso
+          </h3>
+          <p class="mb-7 text-base font-medium text-bgray-600 dark:text-darkblack-300">
+
+          </p>
+          <button type="button" (click)="resetSteps()"
+            class="flex w-full justify-center rounded-lg bg-success-300 py-4 text-base font-semibold text-white transition-all hover:bg-success-400">
+            Voltar para o login
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<main class="container py-2 mb-14 lg:mb-12">
+    <alx-header-page [title]="'labels.segment' | translate" subtitle="<b>{{count$()}}</b> {{ 'labels.segmentFound' | translate }}" backHref="/">
+      <a [routerLink]="formPath" class="flex w-full sm:w-[280px] justify-center rounded-xl bg-primary px-12 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-buttonsHover">
+        {{ 'labels.addSegment' | translate }}
+      </a>
+    </alx-header-page>
+    <div class="px-card rounded-b-[10px] border border-gray bg-white text-sm lg:text-base">
+      <div class="flex items-center justify-between py-3 px-5">
+        <alx-input-search (changed)="search($event)" />
+        <alx-select [label]="'labels.sortBy' | translate" [placeholder]="'labels.select' | translate" [options]="orderByOptions" (selected)="orderBy($event)" />
+      </div>
+      <div class="flex flex-col divide-y divide-gray border-t border-gray [&>*]:py-2 lg:[&>*]:py-1">
+        @for (segment of items$(); track segment) {
+          <c10-segment-list-item [id]="segment.id" [name]="segment.name" (edited)="edit($event, 'segment-form', 'labels.editSegment')" (removed)="remove($event)" />
+        }
+      </div>
+      <div class="border-t border-gray py-4 px-5">
+        <alx-pagination [count$]="count$" [hideSeparatorLine]="true" (selected)="paginate($event)" />
+      </div>
+    </div>
+  </main>
+  <alx-modal-remove (confirmed)="removed($event)" />
