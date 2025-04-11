@@ -9,6 +9,6 @@ import { Segment } from '../../models/segment';
 export class SegmentService extends BaseService<Segment> {
 
   constructor(protected override readonly http: HttpClient) {
-    super('player', http);
+    super('segment', http);
   }
 }

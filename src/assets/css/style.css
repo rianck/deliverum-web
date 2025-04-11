@@ -272,8 +272,8 @@ body.modal-open {
   transition: background-color 0.2s ease-in-out;
 }
 .tab.active {
-  background-color: #f7fafc;
-  color: #1e293b;
+  background-color: #EAEAEA;
+  color: white;  
 }
 .dark .tab.active {
   background-color: #23262B;

@@ -1,6 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&family=Urbanist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply bg-gray-light;
+}
+
+html,
+body,
+app-root {
+  @apply block h-full;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+@layer components {
+    .input-control {
+      @apply rounded-lg border-gray-300 border bg-transparent text-blueDarkLogo placeholder:text-blueDarkLogo focus:outline-none focus:ring-1 focus:ring-primary focus:border-0 flex-1 h-12 w-full px-4;
+    }
+  
+    .input-control.ng-invalid.ng-touched {
+      @apply border-red-400;
+      animation: shake 0.15s ease-in-out 0s 2;
+    }
+  
+    .c-input-control {
+      @apply rounded-lg border-gray-300 border bg-transparent text-blueDarkLogo placeholder:text-blueDarkLogo focus:outline-none flex-1 h-12 w-full px-4;
+    }
+  
+    .c-invalid-input, .c-invalid-select {
+      @apply absolute top-3 text-red-400;
+    }
+  
+    .c-invalid-input {
+      @apply right-4;
+    }
+  
+    .c-invalid-select {
+      @apply right-8;
+    }
+  
+    .label-control {
+      @apply pl-1 text-blueDarkLogo;
+    }
+  }
+
+  .switch-btn{
+    @apply bg-gray-300;
+}
+.switch-btn.active {
+    @apply bg-success;
+}
+.switch-btn span{
+    @apply translate-x-0;
+}
+.switch-btn.active span {
+    @apply translate-x-[23px];
+}
 

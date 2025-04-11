@@ -17,7 +17,7 @@
               Segmentos
             </h4>
             <p class="mt-0.5 text-sm font-medium text-gray-700">
-              utilizados para cadastrps de fornecedores 
+              utilizados para cadastros de fornecedores 
             </p>
           </div>
         </button>
@@ -32,11 +32,11 @@
               Unidades de medida
             </h4>
             <p class="mt-0.5 text-sm font-medium text-gray-700">
-              utilizados para cadastros na plataforma
+              unidades usadas na plataforma
             </p>
           </div>
         </button>
-        <button type="button" (click)="setActiveTab('tags')" class="tab group flex gap-x-4 rounded-lg p-4 text-left transition-all" [ngClass]="{ 'active': activeTab === 'tags' }">
+        <button type="button" (click)="setActiveTab('tags')" class="tab flex gap-x-4 rounded-lg p-4 text-left transition-all" [ngClass]="{ 'active': activeTab === 'tags' }">
             <div class="tab-icon inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-100 transition-all">
             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor"><g>
                 <path d="m53.655 33.447-19.134-19.134c-1.396-1.397-3.056-2.201-4.943-2.431-.555-5.107-3.384-8.888-6.904-8.888-3.855 0-6.882 4.533-6.998 10.379-1.71.994-3.039 2.557-3.724 4.461l-1.311 1.204c-1.831 1.642-2.799 3.83-2.799 6.329v27.042c0 4.74 3.856 8.597 8.597 8.597h12.5c3.204 0 5.999-1.776 7.469-4.396.771.22 1.558.332 2.341.332 2.228 0 4.417-.875 6.063-2.521l8.844-8.844c3.343-3.345 3.343-8.786-.001-12.13zm-30.981-28.453c2.345 0 4.372 2.981 4.883 6.839l-1.226.052c-1.136-.536-2.38-.827-3.657-.827-1.662 0-3.269.486-4.654 1.38-.102.024-.201.054-.301.082.349-4.185 2.473-7.526 4.955-7.526zm6.264 54.012h-12.5c-3.638 0-6.597-2.959-6.597-6.597v-27.042c0-1.941.718-3.57 2.143-4.849l1.353-1.242c.075-.05.139-.113.199-.183l2.426-2.227c.459 2.375 1.427 4.381 2.72 5.735-.061.28-.097.569-.097.866 0 2.239 1.834 4.062 4.089 4.062s4.09-1.822 4.09-4.062c0-2.255-1.834-4.09-4.09-4.09-1.178 0-2.232.508-2.979 1.307-.998-1.318-1.717-3.258-1.947-5.459l.469-.431c.243-.221.503-.417.771-.598.034-.021.066-.042.097-.066 1.067-.694 2.307-1.072 3.589-1.072 1.646 0 3.229.617 4.454 1.734l.729.669c.08.109.177.201.294.27l5.222 4.794c1.416 1.271 2.134 2.899 2.134 4.841v27.042c0 3.639-2.946 6.598-6.569 6.598zm-6.264-36.538c-.526 0-1.035-.154-1.515-.43.381-.404.918-.66 1.515-.66 1.152 0 2.09.938 2.09 2.09 0 1.137-.938 2.062-2.09 2.062-.952 0-1.748-.635-1.999-1.496.632.279 1.301.434 1.999.434.552 0 1-.447 1-1s-.448-1-1-1zm29.567 21.694-8.844 8.844c-1.651 1.652-4.011 2.289-6.22 1.74.21-.744.33-1.526.33-2.336v-27.043c0-2.499-.968-4.688-2.79-6.321l-5.051-4.637c.004-.165.012-.326.012-.494 1.298.231 2.449.834 3.428 1.813l19.134 19.134c2.565 2.564 2.565 6.736.001 9.3z"/><path d="m29.052 31.255h-12.756c-.552 0-1 .447-1 1s.448 1 1 1h12.756c.552 0 1-.447 1-1s-.448-1-1-1z"/><path d="m29.052 37.435h-12.756c-.552 0-1 .447-1 1s.448 1 1 1h12.756c.552 0 1-.447 1-1s-.448-1-1-1z"/><path d="m29.052 43.586h-12.756c-.552 0-1 .447-1 1s.448 1 1 1h12.756c.552 0 1-.447 1-1s-.448-1-1-1z"/>
@@ -87,23 +87,23 @@
     <!--Tab Content -->
     <div class="tab-content col-span-9 px-10 py-8">
       <!-- segment  -->
-      <div *ngIf="activeTab === 'segment'" class="tab-pane active">
+      <div *ngIf="activeTab === 'segment'" class="">
         <c10-segment></c10-segment>
       </div>
       <!-- unit -->
-      <div *ngIf="activeTab === 'unit'" class="tab-pane active">
+      <div *ngIf="activeTab === 'unit'" class="">
         
       </div>
       <!-- tags -->
-      <div *ngIf="activeTab === 'tags'" class="tab-pane active">
+      <div *ngIf="activeTab === 'tags'" class="">
         
       </div>
       <!-- typeOfWork -->
-      <div *ngIf="activeTab === 'typeOfWork'" class="tab-pane active">
+      <div *ngIf="activeTab === 'typeOfWork'" class="">
         
       </div>
       <!-- source -->
-      <div *ngIf="activeTab === 'source'" class="tab-pane active">
+      <div *ngIf="activeTab === 'source'" class="">
         
       </div>
     </div>
