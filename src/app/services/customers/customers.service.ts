@@ -9,12 +9,6 @@ import { Injectable } from '@angular/core';
 })
 export class CustomersService extends BaseService<Customer> {
 
-  private readonly getPhotoUrlSubject = new Subject<string>();
-  private readonly postPhotoSubject = new Subject<number>();
-
-  readonly photoUrl$ = this.getPhotoUrlSubject.asObservable();
-  readonly photoUploaded$ = this.postPhotoSubject.asObservable();
-
   constructor(protected override readonly http: HttpClient) {
     super('customers', http);
   }
@@ -33,19 +27,16 @@ export class CustomersService extends BaseService<Customer> {
       .subscribe(result => {
         const data = {
           ...result,
-          dateOfBirth: new Date(result.dateOfBirth),
-          startDate: !!result.startDate
-            ? new Date(result.startDate)
-            : undefined
+          dateOfBirth: new Date(result.dateOfBirth)
         };
         this.getByIdSubject.next(data);
         subscription.unsubscribe();
       });
   }
 
-  post(agent: Customer, formData?: FormData): void {
+  post(customer: Customer, formData?: FormData): void {
     const subscription = this.http
-      .post<number>(this.url, agent)
+      .post<number>(this.url, customer)
       .pipe(
         catchError(e => {
           this.handleError(e);

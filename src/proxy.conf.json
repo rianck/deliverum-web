@@ -1,0 +1,10 @@
+{
+    "/viacep": {
+      "target": "https://viacep.com.br/ws/",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/viacep": ""
+      }
+    }
+  }

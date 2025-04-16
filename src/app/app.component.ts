@@ -23,7 +23,7 @@ export class AppComponent implements OnDestroy {
   
   private readonly subs = new SubSink();
 
-  readonly title = 'cowz';
+  readonly title = 'construa10';
 
   constructor(
     private readonly translate: TranslateService,

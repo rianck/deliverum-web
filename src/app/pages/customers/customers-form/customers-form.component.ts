@@ -1,5 +1,6 @@
 import { Customer } from '../../../models';
 import { CustomersService } from '../../../services/customers/customers.service';
+import { ViaCepService } from '../../../shared/services/viacep.service';
 import { BaseFormSimplerComponent } from '../../../shared/components/base-form/base-form-simpler-component';
 import { CalendarModule } from 'primeng/calendar';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -12,6 +13,7 @@ import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl } from '@
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+
 @Component({
   selector: 'c10-customers-form',
   standalone: true,
@@ -21,79 +23,86 @@ import { TranslateModule } from '@ngx-translate/core';
     NgIf,
     ReactiveFormsModule,
     RouterLink,
-    TranslateModule
+    TranslateModule,
+
   ],
   templateUrl: './customers-form.component.html',
   styleUrl: './customers-form.component.css'
 })
 export class CustomersFormComponent extends BaseFormSimplerComponent<Customer> implements OnInit, OnDestroy {
 
-  readonly contentTypes = [
-    'image/jpeg',
-    'image/png',
-    'image/gif',
-    'image/webp'
-  ];
-
   private formData?: FormData;
-  imgSrc?: SafeResourceUrl;
+  customerType: string = 'physicalPerson';
 
   get dateOfBirth(): AbstractControl {
     return this.form.get('dateOfBirth')!;
   }
 
-  get startDate(): AbstractControl {
-    return this.form.get('startDate')!;
-  }
-
   constructor(
     private readonly fb: FormBuilder,
+    private readonly viaCepService: ViaCepService,
     private readonly customersService: CustomersService,
     private readonly domSanitizer: DomSanitizer
   ) {
     super(fb.group({
-        firstName: [, [Validators.required]],
-        lastName: [, [Validators.required]],
+        customerType: ['physicalPerson', Validators.required], // Campo para o tipo de cliente
+        cpf: [''], // Campo para Pessoa Física
+        cnpj: [''], // Campo para Pessoa Jurídica
+        reasonName: [''], // 
+        fantasyName: [''], // 
+        fullName: [, [Validators.required]],        
         dateOfBirth: [, [Validators.required]],
         email: [, [Validators.required, Validators.email]],
         phoneNumber: [, [Validators.required, Validators.pattern(/^$|^\d{11}$/)]],
-        jobPosition: [, [Validators.required]],
-        startDate: [, []]
+        cep: [''], // 
+        address: [''], // 
+        numberAddress: [''], // 
+        district: [''], // 
+        city: [''], // 
+        complement: [''] // 
       }),
       customersService);
   }
 
-  ngOnInit(): void {
-    this.init();
+  observeCep(){
+    this.form.get('cep')?.valueChanges.subscribe(value =>{
+      if (value?.length == 8){
+          // source address
+          this.sourceAddress();
+      }
+    })
+  }
 
-    this.subs.sink = this.customersService
-      .item$
-      .subscribe(item => {
-        if (!item?.photoUrl) return;
-        this.imgSrc = this.domSanitizer.bypassSecurityTrustResourceUrl(item.photoUrl);
-      });
+  sourceAddress(){
+    var cep = this.form.get('cep')?.value;
+    this.viaCepService.getAddressByCep(cep).subscribe(
+    {
+      next: (response) => {
+        this.form.patchValue({
+          address: response.logradouro,
+          district: response.bairro,
+          city: response.localidade,
+        });        
+      },
+      error: () =>{
+          console.log('Erro ao buscar o endereço');
+      }
+    }
+    )
+  }
+
+  onCustomerTypeChange() {
+    const type = this.form.get('customerType')?.value;
+    this.customerType = type;    
+  }
+
+  ngOnInit(): void {
+    this.init();   
+    this.observeCep(); 
   }
 
   ngOnDestroy(): void {
     this.destroy();
-  }
-
-  changePhoto($event: any) {
-    const reader = new FileReader();
-    if ($event.target.files && $event.target.files.length) {
-      const [file] = $event.target.files;
-      if (file) {
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          this.imgSrc = reader.result as string;
-          this.formData = new FormData();
-          this.formData.append('file', file, file.name);
-          if (this.form.pristine) {
-            this.form.markAsDirty();
-          }
-        };
-      }
-    }
   }
 
   override save(): void {
@@ -102,8 +111,7 @@ export class CustomersFormComponent extends BaseFormSimplerComponent<Customer> i
       ...this.original,
       ...this.current,
       ...this.form.value,
-      dateOfBirth: format(this.dateOfBirth.value, 'yyyy-MM-dd'),
-      startDate: format(this.startDate.value, 'yyyy-MM-dd')
+      dateOfBirth: format(this.dateOfBirth.value, 'yyyy-MM-dd')      
     });
     delete value.id;
     if (!this.id) {

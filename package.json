@@ -27,7 +27,7 @@
     "date-fns": "^4.1.0",
     "font-awesome": "^4.7.0",
     "ngx-mask": "^19.0.3",
-    "primeng": "^17.18.15",
+    "primeng": "^17.18.12",
     "rxjs": "~7.8.0",
     "subsink": "^1.0.2",
     "tslib": "^2.3.0",

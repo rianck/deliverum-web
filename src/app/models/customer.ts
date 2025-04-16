@@ -1,12 +1,17 @@
 export type Customer = {
   id: number;
-  firstName: string;
-  lastName: string;
+  cpf: string;
+  cnpj: string;  
+  reasonName: string;
+  fantasyName: string;
   fullName: string;
   dateOfBirth: Date;
   email: string;
-  phonenumber: string;
-  jobPosition: string;
-  startDate?: Date;
-  photoUrl?: string;
+  phonenumber: string; 
+  cep: string; 
+  address: string;
+  district: string;
+  numberAddress: string;
+  city: string;
+  complement: string;
 }

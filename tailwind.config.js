@@ -29,6 +29,7 @@ module.exports = {
         "5xl": "48px",
       },
       colors: {      
+        body: '#2C1348',
         primary: "#FF540A",
         secondary: "#FF5E19",
         gray: {
