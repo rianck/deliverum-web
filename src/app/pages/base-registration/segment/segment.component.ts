@@ -9,6 +9,9 @@ import { ModalRemoveComponent } from '../../../shared/components/modal-remove/mo
 import { PaginationComponent } from "../../../shared/components/pagination/pagination.component";
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { DialogModule } from 'primeng/dialog';
+
+
 
 @Component({
   selector: 'c10-segment',
@@ -18,6 +21,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     ModalRemoveComponent,
     PaginationComponent,
     RouterLink,
+    DialogModule,
     TranslateModule
 ],
   templateUrl: './segment.component.html',
@@ -25,6 +29,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class SegmentComponent extends BaseListSimplerComponent<Segment> implements OnDestroy {
   
+ 
   override _criteria = {
     orderBy: 'Name',
     page: 1,
@@ -52,4 +57,5 @@ export class SegmentComponent extends BaseListSimplerComponent<Segment> implemen
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
+
 }

@@ -10,6 +10,8 @@ import { Segment } from '../../../../models';
 import { SegmentFormService } from '../../../../services/segment/segment-form.service';
 import { SegmentService } from '../../../../services/segment/segment.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
+
 @Component({
   selector: 'c10-segment-form',
   standalone: true,
