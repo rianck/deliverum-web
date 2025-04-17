@@ -6,6 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html {
   @apply bg-gray-200 text-body;
 }
@@ -15,6 +16,8 @@ body,
 app-root {
   @apply block h-full;
 }
+
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -47,11 +50,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
   
     .c-invalid-input {
-      @apply right-4;
+      @apply right-2;
     }
   
     .c-invalid-select {
-      @apply right-8;
+      @apply right-6;
     }
   
     .label-control {

@@ -1,22 +1,66 @@
-<main class="container py-2 mb-14 lg:mb-12">
-    <alx-header-page [title]="'labels.segment' | translate" subtitle="<b>{{count$()}}</b> {{ 'labels.segmentFound' | translate }}" backHref="/">
-      <a [routerLink]="formPath" class="flex w-full sm:w-[280px] justify-center rounded-xl bg-primary px-12 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-buttonsHover">
-        {{ 'labels.addSegment' | translate }}
-      </a>
-    </alx-header-page>
-    <div class="px-card rounded-b-[10px] border border-gray bg-white text-sm lg:text-base">
-      <div class="flex items-center justify-between py-3 px-5">
-        <alx-input-search (changed)="search($event)" />
-        <alx-select [label]="'labels.sortBy' | translate" [placeholder]="'labels.select' | translate" [options]="orderByOptions" (selected)="orderBy($event)" />
-      </div>
-      <div class="flex flex-col divide-y divide-gray border-t border-gray [&>*]:py-2 lg:[&>*]:py-1">
-        @for (segment of items$(); track segment) {
-          <c10-segment-list-item [id]="segment.id" [name]="segment.name" (edited)="edit($event, 'segment-form', 'labels.editSegment')" (removed)="remove($event)" />
-        }
-      </div>
-      <div class="border-t border-gray py-4 px-5">
-        <alx-pagination [count$]="count$" [hideSeparatorLine]="true" (selected)="paginate($event)" />
+<section>
+  <div class="flex flex-col border border-gray rounded-[10px] bg-white p-4 dark:bg-darkblack-600">
+    <div class="flex items-center justify-between border-b border-gray pb-2 mb-4">
+      <div class="flex items-center gap-x-2">
+        <div class="flex items-center justify-start mt-1">
+          <svg viewBox="0 0 1706.66 1706.66" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="text-primary"><g id="Layer_x0020_1">
+            <path d="m843.03 361.56h-334.43c-26.33 0-26.33-40 0-40h334.43c26.32 0 26.34 40 0 40z"/><path d="m1218.31 1706.65h-1096.54c-28.14 0-51.03-22.89-51.03-51.04v-1324.39c0-28.12 22.89-51.01 51.03-51.01h261.33c26.33 0 26.33 40 0 40h-261.33c-5.97 0-11.03 5.04-11.03 11.01v1324.39c0 5.98 5.06 11.03 11.03 11.03h1096.55c5.98 0 11.03-5.04 11.03-11.03v-1324.38c0-5.97-5.04-11.01-11.03-11.01h-261.32c-26.33 0-26.32-40 0-40h261.31c28.13 0 51.04 22.89 51.04 51.01v1324.39c0 28.15-22.89 51.04-51.04 51.04z"/><path d="m1124.59 1578h-909.11c-11.04 0-20-8.97-20-20v-1129.14c0-11.04 8.96-20 20-20h167.61c26.33 0 26.33 40 0 40h-147.61v1089.12h869.11v-1089.14h-147.59c-26.33 0-26.32-40 0-40h167.59c11.04 0 20 8.96 20 20v1129.14c.01 11.04-8.96 20.02-20 20.02z"/><path d="m957 519.56h-573.89c-11.04 0-20-8.96-20-20v-278.78c0-11.04 8.96-20 20-20h93.54v-104.38c0-11.04 8.96-20 20-20h83.19c22.78-101.34 169.25-101.34 192.03 0h71.59c11.04 0 20 8.96 20 20v104.37h93.54c11.04 0 20 8.96 20 20v278.8c0 11.04-8.96 19.98-20 19.98zm-553.89-40h533.89v-238.78h-93.54c-11.04 0-20-8.96-20-20v-104.37l-69.2-.01c-10.85 0-19.7-8.64-19.98-19.48-1.93-75.09-114.93-75.1-116.86 0-.28 10.85-9.15 19.48-19.98 19.48h-80.78v104.37c0 11.04-8.96 20-20 20h-93.54v238.78h-.02z"/><path d="m959.64 708.15h-579.19c-26.33 0-26.33-40 0-40h579.2c26.33 0 26.33 40-.02 40z"/><path d="m959.64 935.25h-579.19c-26.32 0-26.32-40 0-40h579.2c26.33 0 26.32 40-.02 40z"/><path d="m959.64 1162.33h-579.19c-26.32 0-26.32-40 0-40h579.2c26.33 0 26.32 40-.02 40z"/><path d="m959.64 1389.42h-579.19c-26.32 0-26.32-40 0-40h579.2c26.33 0 26.32 40-.02 40z"/><path d="m1495.1 1657.17c-7.85 0-14.97-4.6-18.22-11.75-13.6-29.96-122.62-264.52-122.62-274.9v-1020.82c0-11.04 8.97-20 20-20h241.65c11.04 0 20 8.96 20 20 0 95.45 3.13 1018.21-1.79 1029.08l-120.82 266.63c-3.22 7.15-10.35 11.75-18.19 11.75zm-100.83-290.96 100.83 222.51 100.82-222.5v-996.52h-201.65v996.5z"/><path d="m1559.17 1515.74c-14.61 0-60.19-45.45-116.28-3.93-21.06 15.59-44.9-16.53-23.8-32.15 73.61-54.48 181.72-6.59 156.16 27.97-3.92 5.31-9.96 8.11-16.09 8.11z"/><path d="m1615.92 1390.53h-241.65c-26.33 0-26.32-40 0-40h241.65c26.32 0 26.32 40 0 40z"/><path d="m1615.92 593.77h-241.65c-26.33 0-26.32-40 0-40h241.65c26.33 0 26.33 40 0 40zm0-100h-241.65c-26.33 0-26.32-40 0-40h241.65c26.33 0 26.33 40 0 40z"/></g>
+          </svg>
+        </div>
+        <h1 class="text-3xl ml-2">
+          {{ 'labels.segment' | translate }}
+        </h1>
       </div>
     </div>
-  </main>
+    <div class="flex flex-col-reverse sm:flex-row items-center gap-4 mb-4">
+      <alx-input-search (changed)="search($event)" class="w-full" />
+      <a [routerLink]="formPath" class="flex w-full sm:w-[280px] justify-center rounded-xl bg-buttons px-12 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-buttonsHover">
+        {{ 'labels.newSegment' | translate }}
+      </a>
+    </div>
+    <div class="table-content w-full overflow-x-auto mb-4">
+      <table class="w-full">
+        <thead class="bg-gray-100">
+          <tr class="text-md text-primary-3">
+            <th scope="col" class="py-3.5 px-2 text-left font-semibold w-[40%]">
+              {{ 'labels.name' | translate }}
+            </th>
+            <th scope="col"><span class="sr-only">actions</span></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-bgray-300 border-b bg-white text-base font-medium">
+          @for (segment of items$(); track segment) {
+            <tr>
+              <td class="whitespace-nowrap py-3.5">
+                <span class="ml-2">{{ segment.name }}</span>
+              </td>
+              <td class="whitespace-nowrap text-right">
+                <div class="text-right">
+                  <button type="button" [title]="'labels.edit' | translate" (click)="edit(segment.id)" class="group inline-flex h-8 w-8 items-center justify-center rounded-full bg-transparent hover:border-transparent hover:bg-primary">
+                    <svg class="stroke-gray-900 group-hover:stroke-white" width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.2141 4.98239L17.6158 3.58063C18.39 2.80646 19.6452 2.80646 20.4194 3.58063C21.1935 4.3548 21.1935 5.60998 20.4194 6.38415L19.0176 7.78591M16.2141 4.98239L10.9802 10.2163C9.93493 11.2616 9.41226 11.7842 9.05637 12.4211C8.70047 13.058 8.3424 14.5619 8 16C9.43809 15.6576 10.942 15.2995 11.5789 14.9436C12.2158 14.5877 12.7384 14.0651 13.7837 13.0198L19.0176 7.78591M16.2141 4.98239L19.0176 7.78591" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M21 12C21 16.2426 21 18.364 19.682 19.682C18.364 21 16.2426 21 12 21C7.75736 21 5.63604 21 4.31802 19.682C3 18.364 3 16.2426 3 12C3 7.75736 3 5.63604 4.31802 4.31802C5.63604 3 7.75736 3 12 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <button type="button" [title]="'labels.remove' | translate" (click)="remove(segment.id)" class="group inline-flex h-8 w-8 items-center justify-center rounded-full bg-transparent hover:border-transparent hover:bg-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" class="stroke-gray-900 group-hover:stroke-white" fill="none">
+                      <path d="M19.5 5.5L18.8803 15.5251C18.7219 18.0864 18.6428 19.3671 18.0008 20.2879C17.6833 20.7431 17.2747 21.1273 16.8007 21.416C15.8421 22 14.559 22 11.9927 22C9.42312 22 8.1383 22 7.17905 21.4149C6.7048 21.1257 6.296 20.7408 5.97868 20.2848C5.33688 19.3626 5.25945 18.0801 5.10461 15.5152L4.5 5.5" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M3 5.5H21M16.0557 5.5L15.3731 4.09173C14.9196 3.15626 14.6928 2.68852 14.3017 2.39681C14.215 2.3321 14.1231 2.27454 14.027 2.2247C13.5939 2 13.0741 2 12.0345 2C10.9688 2 10.436 2 9.99568 2.23412C9.8981 2.28601 9.80498 2.3459 9.71729 2.41317C9.32164 2.7167 9.10063 3.20155 8.65861 4.17126L8.05292 5.5" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M9.5 16.5L9.5 10.5" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M14.5 16.5L14.5 10.5" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="text-xs lg:text-sm">
+      <span>{{ 'labels.recordsFound' | translate }} <b class="pl-2">{{ count$() }}</b></span>
+    </div>
+    <alx-pagination [count$]="count$" (selected)="paginate($event)" [hideSeparatorLine]="true" />
+  </div>
   <alx-modal-remove (confirmed)="removed($event)" />
+</section>

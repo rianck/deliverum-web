@@ -82,6 +82,31 @@ body {
   padding: 10px;
   box-shadow: 100px 100px 100px 100px #e4e4e4 inset;
 }
+
+.p-datepicker {
+  min-width: 90px !important; /* Reduzindo a largura mínima */
+  width: auto !important;
+  font-size: 0.75rem; /* Reduzindo o tamanho da fonte */
+}
+
+.p-datepicker .p-datepicker-header {
+  padding: 0.125rem 0.25rem; /* Reduzindo o espaçamento do cabeçalho */
+}
+
+.p-datepicker .p-datepicker-calendar {
+  font-size: 0.75rem; /* Reduzindo o tamanho da fonte do calendário */
+}
+
+.p-datepicker .p-datepicker-calendar td {
+  padding: 0.25rem; /* Reduzindo o espaçamento entre os dias */
+  height: 1.5rem; /* Reduzindo a altura das células */
+  width: 1.5rem; /* Reduzindo a largura das células */
+}
+
+.p-datepicker .p-datepicker-footer {
+  padding: 0.125rem; /* Reduzindo o espaçamento do rodapé */
+}
+
 .progess-bar .bonus-per .bonus-inner {
   width: 60px;
   height: 60px;
