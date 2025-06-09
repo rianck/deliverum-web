@@ -1,13 +1,1 @@
-<alx-dialog [id]="formId">
-    <div class="w-full lg:w-[780px]">
-      <form [formGroup]="form" class="grid grid-cols-2 items-center gap-x-5 gap-y-2.5 text-base">
-        <alx-input-text formControlName="name" [placeholder]="'labels.segmentName' | translate" [maxlength]="75" class="col-span-2" />
-        <div class="text-xs lg:text-sm text-[red] col-span-2 lg:col-span-1">
-          <p *ngIf="error">{{ error | translate }}</p>
-        </div>
-        <button type="button" [disabled]="!form.valid" (click)="save()" class="button-transition w-full cursor-pointer rounded-lg border-none bg-body px-7 py-3 text-base font-semibold text-white hover:bg-primary disabled:bg-gray-300 col-span-2 lg:col-span-1">
-          {{ 'labels.save' | translate }}
-        </button>
-      </form>
-    </div>
-</alx-dialog>
+teste

@@ -24,7 +24,6 @@ import { TranslateModule } from '@ngx-translate/core';
     ReactiveFormsModule,
     RouterLink,
     TranslateModule,
-
   ],
   templateUrl: './customers-form.component.html',
   styleUrl: './customers-form.component.css'

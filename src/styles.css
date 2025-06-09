@@ -8,7 +8,7 @@
 
 
 html {
-  @apply bg-gray-200 text-body;
+  @apply bg-bodyApp text-blackLogo-70;
 }
 
 html,
@@ -33,7 +33,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @layer components {
     .input-control {
-      @apply rounded-lg border-gray-300 border bg-transparent text-blueDarkLogo placeholder:text-blueDarkLogo focus:outline-none focus:ring-1 focus:ring-primary focus:border-0 flex-1 h-12 w-full px-4;
+      @apply rounded-lg border-grayLogo border bg-transparent text-blueDarkLogo placeholder:text-blueDarkLogo focus:outline-none focus:ring-1 focus:ring-primary focus:border-0 flex-1 h-12 w-full px-4;
     }
   
     .input-control.ng-invalid.ng-touched {
@@ -42,7 +42,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
   
     .c-input-control {
-      @apply rounded-lg border-gray-300 border bg-transparent text-blueDarkLogo placeholder:text-gray-200 focus:outline-none flex-1 h-12 w-full px-4;
+      @apply rounded-lg border-grayLogo border bg-transparent text-blueDarkLogo placeholder:text-grayLogo focus:outline-none flex-1 h-12 w-full px-4;
     }
   
     .c-invalid-input, .c-invalid-select {
@@ -63,10 +63,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
 .switch-btn{
-    @apply bg-gray-300;
+    @apply bg-grayLogo;
 }
 .switch-btn.active {
-    @apply bg-success;
+    @apply bg-greenDarkLogo;
 }
 .switch-btn span{
     @apply translate-x-0;

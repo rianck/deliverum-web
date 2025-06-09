@@ -1,3 +1,0 @@
-[submodule "src/app/shared"]
-	path = src/app/shared
-	url = https://gitlab.com/loggic1/angular_shared.git

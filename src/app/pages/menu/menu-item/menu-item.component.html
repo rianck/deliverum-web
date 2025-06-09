@@ -1,0 +1,66 @@
+<section>
+  <div class="flex flex-col border border-grayLogo-70 rounded-[10px] bg-white p-4 dark:bg-darkblack-600">
+    <div class="flex items-center justify-between border-b border-gray pb-2 mb-4">
+      <div class="flex items-center gap-x-2">
+        <div class="flex items-center justify-start mt-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary">
+                <path d="M9 14L10.7528 15.4023C11.1707 15.7366 11.7777 15.6826 12.1301 15.2799L15 12M16 4H17C19.2091 4 21 5.79086 21 8V18C21 20.2091 19.2091 22 17 22H7C4.79086 22 3 20.2091 3 18V8C3 5.79086 4.79086 4 7 4H8M16 4C16 5.10457 15.1046 6 14 6H10C8.89543 6 8 5.10457 8 4M16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4" stroke-width="1.5" stroke="currentColor" stroke-linecap="round"/>
+          </svg>   
+        </div>
+        <h1 class="text-3xl">
+          {{ 'labels.menu' | translate }}
+        </h1>
+      </div>
+    </div>
+    <div class="flex flex-col-reverse sm:flex-row items-center gap-4 mb-4">
+      <alx-input-search (changed)="search($event)" class="w-full" />
+      <a [routerLink]="formPath" class="flex w-full sm:w-[280px] justify-center rounded-xl bg-primary2 px-12 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-primary">
+        {{ 'labels.newMenu' | translate }}
+      </a>
+    </div>
+    <div class="table-content w-full overflow-x-auto mb-4">
+      <table class="w-full">
+        <div class="bg-grayLogo-30 rounded-lg">
+          <tr class="text-md text-blackLogo">
+            <th scope="col" class="py-3.5 px-2 text-left font-semibold w-[40%]">
+              {{ 'labels.name' | translate }}
+            </th>
+            <th scope="col"><span class="sr-only">actions</span></th>
+          </tr>
+        </div>
+        <tbody class="divide-y divide-bgray-300 border-b bg-white text-base font-medium">
+          @for (segment of items$(); track segment) {
+            <tr>
+              <td class="whitespace-nowrap py-3.5">
+                <span class="ml-2">{{ segment.name }}</span>
+              </td>
+              <td class="whitespace-nowrap text-right">
+                <div class="text-right">
+                  <button type="button" [title]="'labels.edit' | translate" (click)="edit(segment.id)" class="group inline-flex h-8 w-8 items-center justify-center rounded-full bg-transparent hover:border-transparent hover:bg-primary">
+                    <svg class="stroke-gray-900 group-hover:stroke-white" width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.2141 4.98239L17.6158 3.58063C18.39 2.80646 19.6452 2.80646 20.4194 3.58063C21.1935 4.3548 21.1935 5.60998 20.4194 6.38415L19.0176 7.78591M16.2141 4.98239L10.9802 10.2163C9.93493 11.2616 9.41226 11.7842 9.05637 12.4211C8.70047 13.058 8.3424 14.5619 8 16C9.43809 15.6576 10.942 15.2995 11.5789 14.9436C12.2158 14.5877 12.7384 14.0651 13.7837 13.0198L19.0176 7.78591M16.2141 4.98239L19.0176 7.78591" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M21 12C21 16.2426 21 18.364 19.682 19.682C18.364 21 16.2426 21 12 21C7.75736 21 5.63604 21 4.31802 19.682C3 18.364 3 16.2426 3 12C3 7.75736 3 5.63604 4.31802 4.31802C5.63604 3 7.75736 3 12 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <button type="button" [title]="'labels.remove' | translate" (click)="remove(segment.id)" class="group inline-flex h-8 w-8 items-center justify-center rounded-full bg-transparent hover:border-transparent hover:bg-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" class="stroke-grayLogo group-hover:stroke-white" fill="none">
+                      <path d="M19.5 5.5L18.8803 15.5251C18.7219 18.0864 18.6428 19.3671 18.0008 20.2879C17.6833 20.7431 17.2747 21.1273 16.8007 21.416C15.8421 22 14.559 22 11.9927 22C9.42312 22 8.1383 22 7.17905 21.4149C6.7048 21.1257 6.296 20.7408 5.97868 20.2848C5.33688 19.3626 5.25945 18.0801 5.10461 15.5152L4.5 5.5" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M3 5.5H21M16.0557 5.5L15.3731 4.09173C14.9196 3.15626 14.6928 2.68852 14.3017 2.39681C14.215 2.3321 14.1231 2.27454 14.027 2.2247C13.5939 2 13.0741 2 12.0345 2C10.9688 2 10.436 2 9.99568 2.23412C9.8981 2.28601 9.80498 2.3459 9.71729 2.41317C9.32164 2.7167 9.10063 3.20155 8.65861 4.17126L8.05292 5.5" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M9.5 16.5L9.5 10.5" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M14.5 16.5L14.5 10.5" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="text-xs lg:text-sm">
+      <span>{{ 'labels.recordsFound' | translate }} <b class="pl-2">{{ count$() }}</b></span>
+    </div>
+    <alx-pagination [count$]="count$" (selected)="paginate($event)" [hideSeparatorLine]="true" />
+  </div>
+  <alx-modal-remove (confirmed)="removed($event)" />
+</section>

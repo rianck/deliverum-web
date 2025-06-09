@@ -6,11 +6,13 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { BaseRegistrationComponent } from './pages/base-registration/base-registration.component';
 import { SegmentComponent } from './pages/base-registration/segment/segment.component';
 import { SegmentFormComponent } from './pages/base-registration/segment/segment-form/segment-form.component';
-import { BuildingComponent } from './pages/building/building.component';
-import { CompanyComponent } from './pages/company/company.component';
-import { BuildingFormComponent } from './pages/building/building-form/building-form.component';
+import { CompanyComponent } from './pages/organization/company/company.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { CustomersFormComponent } from './pages/customers/customers-form/customers-form.component';
+import { OrganizationComponent } from './pages/organization/organization.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { MenuItemComponent } from './pages/menu/menu-item/menu-item.component';
+import { MenuFormComponent } from './pages/menu/menu-item/menu-form/menu-form.component';
 
 export const routes: Routes = [
   {
@@ -32,17 +34,21 @@ export const routes: Routes = [
         component: HomeComponent
       },
       {
+        path: 'menu',
+        component: MenuComponent
+      }, 
+      {
+        path: 'menuItem',
+        component: MenuItemComponent
+      }, 
+      {
+        path: 'menuForm',
+        component: MenuFormComponent
+      },       
+      {
         path: 'company',
         component: CompanyComponent
       },      
-      {
-        path: 'building',
-        component: BuildingComponent
-      },
-      {
-        path: 'building-form',
-        component: BuildingFormComponent
-      },
       {
         path: 'baseRegistration',
         component: BaseRegistrationComponent
@@ -62,6 +68,10 @@ export const routes: Routes = [
       {
         path: 'segment-form',
         component: SegmentFormComponent
+      },
+      {
+        path: 'organization',
+        component: OrganizationComponent
       }
     ]
   }

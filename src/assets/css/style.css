@@ -560,8 +560,8 @@ button.fc-button.fc-button-primary.fc-prev-button {
   .item-wrapper
   ul
   li.item:hover {
-  fill: #FF540A;
-  color: #FF540A;
+  fill: #EB5321;
+  color: #EB5321;
 }
 :is(.sidebar-wrapper, .sidebar-wrapper-collapse)
   .sidebar-body
@@ -571,7 +571,7 @@ button.fc-button.fc-button-primary.fc-prev-button {
   .item-ico
   svg
   .path-2 {
-  fill: #FF540A;
+  fill: #EB5321;
 }
 .sidebar-wrapper .sidebar-body .nav-wrapper ul li.item .sub-menu {
   display: none;
@@ -639,8 +639,8 @@ svg
 .item-wrapper
 ul
 li.item:hover {
-  fill: #FF540A;
-  color: #FF540A;
+  fill: #EB5321;
+  color: #EB5321;
 }
 :is(.dark .sidebar-wrapper, .dark .sidebar-wrapper-collapse)
 .sidebar-body
@@ -650,7 +650,7 @@ li.item:hover
 .item-ico
 svg
 .path-2 {
-  fill: #FF540A;
+  fill: #EB5321;
 }
 @media (max-width: 1536px) {
 }

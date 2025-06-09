@@ -1,0 +1,76 @@
+<section>
+    <div class="tab-content flex flex-col gap-y-4 border border-gray rounded-[10px] bg-white p-4">
+      <div class="flex items-center justify-between border-b border-gray pb-2">
+        <div class="flex items-center gap-x-2">
+            <div class="flex items-center justify-start mt-1">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"  width="28px" height="28px" fill="currentColor" class="text-primary"><clipPath id="clip0_643_5642">
+                <path d="m0 0h512v512h-512z"/></clipPath><g clip-path="url(#clip0_643_5642)" clip-rule="evenodd" fill-rule="evenodd"><path d="m273.612 74.7809-218.7414-49.7141c-15.7939-3.5895-30.833 8.4152-30.833 24.6118v413.0084c0 13.94 11.3 25.24 25.2394 25.24h243.981v-388.5343c0-11.7843-8.154-22.0002-19.646-24.6118zm-213.4142-73.1539c-30.8357-7.00811-60.1978 16.4296-60.1978 48.0516v413.0084c0 27.215 22.0621 49.277 49.277 49.277h268.019v-412.5713c0-23.0074-15.921-42.9527-38.356-48.0516z"/><path d="m462.723 225.916h-145.428v262.01h145.428c13.939 0 25.239-11.3 25.239-25.24v-211.53c0-13.939-11.3-25.24-25.239-25.24zm-169.465-24.037v310.084h169.465c27.215 0 49.277-22.062 49.277-49.277v-211.53c0-27.215-22.062-49.277-49.277-49.277z"/><path d="m137.012 372.549c-9.293 0-16.826 7.534-16.826 16.827v108.169c0 6.637-5.381 12.018-12.019 12.018s-12.0186-5.381-12.0186-12.018v-108.169c0-22.569 18.2956-40.864 40.8636-40.864h43.268c22.568 0 40.864 18.295 40.864 40.864v108.169c0 6.637-5.381 12.018-12.019 12.018s-12.019-5.381-12.019-12.018v-108.169c0-9.293-7.533-16.827-16.826-16.827z"/><path d="m74.5156 128.566c0-6.638 5.381-12.019 12.0188-12.019h45.0706c6.638 0 12.019 5.381 12.019 12.019 0 6.637-5.381 12.018-12.019 12.018h-45.0706c-6.6378 0-12.0188-5.381-12.0188-12.018zm100.3564 0c0-6.638 5.381-12.019 12.019-12.019h45.071c6.637 0 12.018 5.381 12.018 12.019 0 6.637-5.381 12.018-12.018 12.018h-45.071c-6.638 0-12.019-5.381-12.019-12.018z"/><path d="m74.5156 200.679c0-6.638 5.381-12.019 12.0188-12.019h45.0706c6.638 0 12.019 5.381 12.019 12.019s-5.381 12.019-12.019 12.019h-45.0706c-6.6378 0-12.0188-5.381-12.0188-12.019zm100.3564 0c0-6.638 5.381-12.019 12.019-12.019h45.071c6.637 0 12.018 5.381 12.018 12.019s-5.381 12.019-12.018 12.019h-45.071c-6.638 0-12.019-5.381-12.019-12.019z"/><path d="m74.5156 272.792c0-6.638 5.381-12.019 12.0188-12.019h45.0706c6.638 0 12.019 5.381 12.019 12.019s-5.381 12.019-12.019 12.019h-45.0706c-6.6378 0-12.0188-5.381-12.0188-12.019zm100.3564 0c0-6.638 5.381-12.019 12.019-12.019h45.071c6.637 0 12.018 5.381 12.018 12.019s-5.381 12.019-12.018 12.019h-45.071c-6.638 0-12.019-5.381-12.019-12.019z"/><path d="m367.773 288.417c0-6.638 5.381-12.019 12.019-12.019h45.071c6.637 0 12.018 5.381 12.018 12.019s-5.381 12.019-12.018 12.019h-45.071c-6.638 0-12.019-5.381-12.019-12.019zm0 72.113c0-6.638 5.381-12.019 12.019-12.019h45.071c6.637 0 12.018 5.381 12.018 12.019s-5.381 12.019-12.018 12.019h-45.071c-6.638 0-12.019-5.381-12.019-12.019zm0 72.113c0-6.638 5.381-12.019 12.019-12.019h45.071c6.637 0 12.018 5.381 12.018 12.019 0 6.637-5.381 12.018-12.018 12.018h-45.071c-6.638 0-12.019-5.381-12.019-12.018z"/></g>
+              </svg>
+            </div>
+            <h1 class="text-3xl ml-2">
+              {{ 'labels.company' | translate }}
+            </h1>
+          </div>
+      </div>
+      <div class="tab-pane active">
+        <form [formGroup]="form" class="grid grid-cols-3 gap-4 mb-4 text-primary-5 font-semibold">
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.cnpj' | translate }}</span>
+            <alx-input-text formControlName="cnpj" [placeholder]="''" [maxlength]="50" />
+          </div> 
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.reasonName' | translate }}</span>
+            <alx-input-text formControlName="reasonName" [placeholder]="''" [maxlength]="50" />
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.fantasyName' | translate }}</span>
+            <alx-input-text formControlName="fantasyName" [placeholder]="''" [maxlength]="50" />
+          </div>   
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.responsible' | translate }}</span>
+            <alx-input-text formControlName="responsible" [placeholder]="''" [mask]="'(00) 00000-0000'" />
+          </div>    
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.phone' | translate }}</span>
+            <alx-input-text formControlName="phone" [placeholder]="''" [mask]="'(00) 00000-0000'" />
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.email' | translate }}</span>
+            <alx-input-text formControlName="email" [placeholder]="''" [maxlength]="255" />
+          </div>
+          <div class="grid grid-cols-3 border-t border-gray pt-4 sm:col-span-3">
+            <span class="text-sm antialised font-medium">{{ 'labels.address' | translate }}</span>
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.cep' | translate }}</span>
+            <alx-input-text formControlName="cep" [placeholder]="''" [maxlength]="50" [mask]="'00000000'"/>
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.address' | translate }}</span>
+            <alx-input-text formControlName="address" [placeholder]="''" [maxlength]="255" />
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.number' | translate }}</span>
+            <alx-input-text formControlName="numberAddress" [placeholder]="''" [maxlength]="255" />
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.district' | translate }}</span>
+            <alx-input-text formControlName="district" [placeholder]="''" [maxlength]="255" />
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.city' | translate }}</span>
+            <alx-input-text formControlName="city" [placeholder]="''" [maxlength]="255" />
+          </div>
+          <div class="flex flex-col gap-y-2 col-span-3 sm:col-span-1">
+            <span class="label-control">{{ 'labels.complement' | translate }}</span>
+            <alx-input-text formControlName="complement" [placeholder]="''" [maxlength]="255" />
+          </div>
+        </form>
+        <div class="grid grid-cols-3 border-t border-gray pt-4">
+          <button type="button" [disabled]="!form.valid || form.pristine" (click)="save()" class="button-transition w-full cursor-pointer rounded-lg border-none bg-primary hover:bg-primary-2 disabled:bg-gray-300 px-7 py-3.5 text-base font-semibold text-white col-span-3 sm:col-start-3">
+            {{ 'labels.save' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
